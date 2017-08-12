@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clase 3 eventos</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>practica de jquery</h1>
+				<a href="#" id="btn1" class="btn btn-info">Mostrar</a>
+				<a href="#" id="btn2" class="btn btn-danger">Ocultar</a>
+				<a href="#" id="btn3" class="btn btn-primary">Mostrar/Ocultar</a>
+					<article id="courses">
+				
+						<p>Includes over 250 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible.</p>
+						
+					</article>
+
+
+			</div>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')</script>
+	<script>
+
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$('#courses').show("swing");//mostrar
+		 });
+		$("#btn2").click(function(){
+			$('#courses').hide("linear");//ocultar
+		});
+		$("#btn3").click(function(){
+			$('#courses').toggle("swing");//mostrar/ocultar
+		});
+	});
+
+	/*(function($){
+			$(document).ready (function(){
+				$("#btn1").click (onClickShowCourses);
+					
+				function onClickShowCourses(){
+					$('#courses').animate(
+						{height: "toggle"}, 
+						 
+						function(){ console.log("animacion finalizada...")
+					});
+
+				}
+				
+			
+			$('#btn2').click(onClickSlideUpCourse);
+			function onClickSlideUpCourse(){
+					 	$('#courses').toggle("linear");
+					 
+					 	
+			
+					 }
+
+			 $('#btn3').click(onClickSlideDownCourse);
+			function onClickSlideDownCourse(){
+					 	$('#courses').toggle('slow');
+					 
+					 	
+			
+					 }
+					});
+			
+		})(jQuery);*/
+
+	</script>
+
+
+</body>
+</html>

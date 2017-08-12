@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clase 3 eventos</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>cuarta practica de jquery</h1>
+				<a href="#" id="show-courses" class="btn btn-info">Mostrar/Ocultar</a>
+				<section id="courses" class="courses-list">
+					<h2>proximos cursos</h2>
+					<article class="course well">
+						<span class="glyphicon glyphicon-calendar"></span>
+						<time class="created-date" datetime="2017-08-07T12:08:51+00:00">agosto 07, 2017</time>
+						<div class="clearfix">
+						</div>
+						<figure>
+							<img src="img/work-feature-1.png" alt="food 5" class="img-responsive img-thumbnail" >
+
+						</figure>
+						<h2 class="title">hello world</h2>
+						<div class="summary">Includes over 250 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible.</div>
+
+					</article>
+				</section>
+			</div>
+		</div>
+	</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')</script>
+	<script>
+		//************funciones anonimas****************
+		//declaracion
+		
+
+		//invocacion
+		//console.log(suma(4,5));
+		(function($){
+			$(document).ready (function(){
+				$("#show-courses").click (onClickShowCourses);
+					
+				function onClickShowCourses(){
+					$('#courses').animate(
+						{height: "toggle"}, 
+						800, 
+						function(){ console.log("animacion finalizada...")
+					});
+				}
+			});
+		})(jQuery);
+
+
+
+		
+
+	</script>
+</body>
+</html>

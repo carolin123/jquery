@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>practica</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+   <div id="main">
+        <input type="button" id="agregar" value="Añadir Elemento" class="bt" />
+        <input type="button" id="eliminar" value="Eliminar Elemento" class="bt" />
+        
+    </div>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		
+		$(document).ready(function() {
+        var contador = 0;
+
+// Crear un elemento div añadiendo estilos CSS
+        var container = $(document.createElement('div')).css({
+            padding: '5px', margin: '20px', width: '170px', border: '1px dotted',
+            borderColor: 'red', textAlign:'center',
+        });
+
+        $('#agregar').click(function() {
+            if (contador <= 19) {
+
+                contador = contador + 1;
+
+                //parrafo.
+                $(container).append('<p class="parra" id=tb' + contador + ' ' +
+                            '>Hola Mundo ' + contador + '</p>');
+
+                if (contador == 1) {   
+
+ 					var elemento = $(document.createElement('div'));
+                   
+                }
+
+ $('#main').after(container, elemento); 
+            }
+            else {      //se establece un limite para añadir elementos, 20 es el limite
+                
+                $(container).append('<label>Limite Alcanzado</label>'); 
+               
+            }
+        });
+
+        $('#eliminar').click(function() {   // Elimina un elemento por click
+            if (contador != 0) { $('#tb' + contador).remove(); contador = contador - 1; }
+        
+            if (contador == 0) { $(container).empty(); 
+        
+                $(container).remove();
+               
+            }
+        });
+
+        
+    });
+
+    
+
+	</script>
+
+</body>
+</html>
